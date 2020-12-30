@@ -1,6 +1,46 @@
 <h1>artist-search-results</h1>
 
 <h3>This is the search result for {{searchQuery}}</h3>
+
+
+{{#each searchData}}
+<p>{{images.[0].url}}</p>
+<img src="{{images.[0].url}}" alt="">
+{{/each}}
+
 {{#each searchData}}
 <h2>{{name}}</h2>
+
+
+<span>{{external_urls.spotify}}</span>
+<br>
+<span>{{followers.total}}</span>
+<br>
+<span>{{href}}</span>
+<br>
+<span>{{id}}</span>
+<br>
+<span>{{name}}</span>
+<br>
+<span>{{popularity}}</span>
+<br>
+<span>{{type}}</span>
+<br>
+<span>{{uri}}</span>
+<br>
+<span>{{#genres}}
+<li>{{this}}</li>
+{{/genres}}
+</span>
+<span>
+
+<li>
+    
+    <img src="{{images.[0].url}}" alt="">
+    
+</li>
+
 {{/each}}
+<br>
+</span>
+
