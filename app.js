@@ -2,13 +2,14 @@ require('dotenv').config();
 
 const express = require('express');
 const hbs = require('hbs');
+const path = require('path');
 
 const SpotifyWebApi = require('spotify-web-api-node');
 
 const app = express();
 
 app.set('view engine', 'hbs');
-app.set('views', __dirname + '/views');
+app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(__dirname + '/public'));
 
 const spotifyApi = new SpotifyWebApi({
@@ -17,6 +18,7 @@ const spotifyApi = new SpotifyWebApi({
 });
 
 // Retrieve an access token
+
 spotifyApi
   .clientCredentialsGrant()
   .then((data) => spotifyApi.setAccessToken(data.body['access_token']))
@@ -32,6 +34,26 @@ app.get('/', (request, response) => {
     pageTitle: 'Home',
     name: name
   });
+});
+
+app.get('/artist-search', (request, response) => {
+  const searchQuery = request.query.q;
+  console.log(searchQuery);
+
+  spotifyApi
+    .searchArtists(searchQuery)
+    .then((data) => {
+      console.log('The received data from the API: ', data.body);
+      const searchData = data.body.artists.items;
+      console.log('The artist items: ', searchData);
+      response.render('artist-search-results', {
+        searchQuery: searchQuery,
+        searchData: searchData
+      });
+    })
+    .catch((err) =>
+      console.log('The error while searching artists occurred: ', err)
+    );
 });
 
 app.listen(3000, () =>
