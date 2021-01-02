@@ -1,17 +1,27 @@
+
 <h1>artist-search-results</h1>
 
 <h3>This is the search result for {{searchQuery}}</h3>
 
 
+<!--<p>
 {{#each searchData}}
-<p>{{images.[0].url}}</p>
+    {{images.[0].url}}</p>
 <img src="{{images.[0].url}}" alt="">
 {{/each}}
+-->
+<section class="search-results">
 
 {{#each searchData}}
-<h2>{{name}}</h2>
 
+<div class="single-result">
 
+<div class="single-result-poster">
+    <img src="{{images.[0].url}}" alt="">
+</div>
+
+<div class="single-result-info">
+<h2 style="padding-top: 10px; font-size: 25px; font-weight:800; color:red">{{name}}</h2>
 <span>{{external_urls.spotify}}</span>
 <br>
 <span>{{followers.total}}</span>
@@ -32,15 +42,11 @@
 <li>{{this}}</li>
 {{/genres}}
 </span>
-<span>
 
-<li>
-    
-    <img src="{{images.[0].url}}" alt="">
-    
-</li>
+</div>
+
+</div>
 
 {{/each}}
-<br>
-</span>
 
+</section>
