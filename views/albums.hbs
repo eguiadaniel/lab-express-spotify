@@ -1,0 +1,42 @@
+<h1>Artists albums</h1>
+
+<h3>This are albums of the artist</h3>
+
+
+<div class="album py-5 bg-light">
+        <div class="container">
+
+          <div class="row">
+{{#each artistData}}
+<div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                  
+                <a href="{{external_urls.spotify}}">
+                <img class="card-img-top" data-src="" alt="{{name}}" style="height: 225px; width: 100%; display: block;" src="{{images.[0].url}}" data-holder-rendered="true">
+                </a>
+               
+      <!--<span>{{album_group}}</span><br>-->
+      {{!-- <span>{{album_type}}</span><br> --}}
+      {{!-- <span>{{#artists}}
+          <li class="list-group-item genre-list" style="color:green">{{this}}</li>
+          {{/artists}}
+      </span><br> --}}
+      {{!-- <span>{{available_markets}}</span><br> --}}
+      <span>{{external_urls}}</span><br>
+      <span>{{href}}</span><br>
+      <span>{{id}}</span><br>
+      <span>{{images}}</span><br>
+       <span>{{images.[0].url}}</span><br>
+      <span>{{name}}</span><br>
+      <span>{{release_date}}</span><br>
+      <span>{{release_date_precision}}</span><br>
+      <span>{{total_tracks}}</span><br>
+      <span>{{type}}</span><br>
+      <span>{{uri}}</span><br>
+                </div>
+            </div>  
+{{/each}}
+          </div>
+
+        </div>
+      </div>

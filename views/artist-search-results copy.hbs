@@ -1,0 +1,97 @@
+
+<h1>artist-search-results</h1>
+
+<h3>This is the search result for {{searchQuery}}</h3>
+
+
+<!--<p>
+{{#each searchData}}
+    {{images.[0].url}}</p>
+<img src="{{images.[0].url}}" alt="">
+{{/each}}
+-->
+<!--
+<section class="search-results">
+
+{{#each searchData}}
+
+<div class="single-result">
+
+<div class="single-result-poster">
+    <img src="{{images.[0].url}}" alt="">
+</div>
+
+<div class="single-result-info">
+<h2 style="padding-top: 10px; font-size: 25px; font-weight:800; color:red">{{name}}</h2>
+<span>{{external_urls.spotify}}</span>
+<br>
+<span>{{followers.total}}</span>
+<br>
+<span>{{href}}</span>
+<br>
+<span>{{id}}</span>
+<br>
+<span>{{name}}</span>
+<br>
+<span>{{popularity}}</span>
+<br>
+<span>{{type}}</span>
+<br>
+<span>{{uri}}</span>
+<br>
+<span>{{#genres}}
+<li>{{this}}</li>
+{{/genres}}
+</span>
+
+</div>
+
+</div>
+
+{{/each}}
+
+</section>
+-->
+
+<section class="search-results">
+{{#each searchData}}
+<div class="card mb-4 box-shadow" style="width: 18rem;">
+  <img class="card-img-top" src="{{images.[0].url}}" alt="{{name}}">
+  <div class="card-body">
+    <h5 class="card-title">{{name}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{type}}</h6>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    {{#genres}}
+    <li class="list-group-item">{{this}}</li>
+    {{/genres}}
+  </ul>
+  <div class="card-body">
+    <a href="{{external_urls.spotify}}" class="btn btn-primary">Go somewhere</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+{{/each}}
+</section>
+<!--
+<section class="search-results">
+          
+            {{#each searchData}} 
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" data-src="" alt="" style="height: 225px; width: 100%; display: block;" src="{{images.[0].url}}" data-holder-rendered="true">
+                <div class="card-body">
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+               
+            </div>            
+          </div>
+            {{/each}}
+</section>
+-->   

@@ -10,6 +10,7 @@
 <img src="{{images.[0].url}}" alt="">
 {{/each}}
 -->
+<!--
 <section class="search-results">
 
 {{#each searchData}}
@@ -50,3 +51,78 @@
 {{/each}}
 
 </section>
+-->
+
+<div class="album py-5 bg-light">
+        <div class="container">
+
+          <div class="row">
+{{#each searchData}}
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                {{#if images.[0].url}}
+                <a href="{{external_urls.spotify}}">
+                <img class="card-img-top" data-src="" alt="{{name}}" style="height: 225px; width: 100%; display: block;" src="{{images.[0].url}}" data-holder-rendered="true">
+                </a>
+                {{else}}
+                
+                <img class="card-img" src="https://via.placeholder.com/300x150.png?text={{name}}" alt="Card image">
+                <div class="card-img-overlay">
+                  <p class="card-title"></p>
+                </div>
+
+                {{/if}}
+                <div class="card-body">
+                  <h5 class="card-title" style="font-weight:bolder">{{name}}</h5>
+                  <!--<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+                  {{#if genres}}
+                  <ul class="list-group list-group-flush">
+
+                  <h6 class="card-subtitle mb-2 text-muted">Genres</h6>
+                    {{#genres}}
+                    <li class="list-group-item genre-list">{{this}}</li>
+                    {{/genres}}
+                 </ul>
+                 {{/if}}
+              </div>
+                <div class="card-body">
+                  <div class="d-flex justify-content-between align-items-center">
+                  <a href="/albums/{{id}}" class="btn btn-success view-album">View albums</a>
+                    <a href="{{external_urls.spotify}}">
+                      <small class="btn btn-outline-dark view-followers" >{{followers.total}} followers</small>
+                    </a>
+                  </div>
+                </div>
+    
+                </div>
+            </div>            
+{{/each}}
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+<!--
+<section class="search-results">
+          
+            {{#each searchData}} 
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" data-src="" alt="" style="height: 225px; width: 100%; display: block;" src="{{images.[0].url}}" data-holder-rendered="true">
+                <div class="card-body">
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    </div>
+                    <small class="text-muted">9 mins</small>
+                  </div>
+               
+            </div>            
+          </div>
+            {{/each}}
+</section>
+-->   
