@@ -76,6 +76,25 @@ app.get('/albums/:artistId', (request, response, next) => {
   );
 });
 
+app.get('/albums/tracks/:trackId', (request, response, next) => {
+  const trackId = request.params.trackId;
+  console.log(trackId);
+
+  // Get tracks in an album
+  spotifyApi.getAlbumTracks(trackId, { limit: 5, offset: 1 }).then(
+    function (data) {
+      console.log('Album tracks', data.body);
+      const trackId = data.body.items;
+      response.render('tracks', {
+        trackId: trackId
+      });
+    },
+    function (err) {
+      console.log('Something went wrong!', err);
+    }
+  );
+});
+
 app.listen(3000, () =>
   console.log('My Spotify project running on port 3000 🎧 🥁 🎸 🔊')
 );

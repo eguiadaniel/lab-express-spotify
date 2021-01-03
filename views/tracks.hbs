@@ -1,0 +1,59 @@
+
+<div class="album py-5">
+        <div class="container">
+
+<h3 style="margin-bottom: 2.5rem">This is the search result for <span  class="text-success" style="font-weight:700">{{searchQuery}} </span></h3>
+
+          <div class="row">
+{{#each trackId}}
+<span>{{artists}}</span><br>
+<span>{{available_markets}}</span><br>
+<span>{{disc_number}}</span><br>
+<span>{{duration_ms}}</span><br>
+<span>{{explicit}}</span><br>
+<span>{{external_urls}}</span><br>
+<span>{{href}}</span><br>
+<span>{{id}}</span><br>
+<span>{{is_local}}</span><br>
+<span>{{name}}</span><br>
+<audio src="{{preview_url}}" controls><br>
+<p>Tu navegador no implementa el elemento audio</p>
+</audio>
+<span>{{track_number}}</span><br>
+<span>{{type}}</span><br>
+<span>{{uri}}</span><br>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+{{/each}}
+      </div>
+
+        </div>
+      </div>

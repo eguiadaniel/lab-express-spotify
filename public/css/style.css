@@ -2,20 +2,28 @@
   box-sizing: border-box;
 }
 
+.header-padding {
+  padding: 20px 0px !important;
+}
+
+.header-bg {
+  background-color: #191414 !important;
+}
+
 body {
   margin: 0, auto;
 }
 
 .home-main {
-  height: 60vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   background-image: linear-gradient(
       to bottom,
-      rgba(89, 182, 89, 0.671),
-      rgba(17, 122, 13, 0.5)
+      rgba(89, 182, 89, 0.171),
+      rgba(17, 122, 13, 0.15)
     ),
     url('/images/spotify-background.jpeg');
   background-size: cover;
@@ -35,8 +43,8 @@ body {
 
 .home-main .bg {
   padding: 5em;
-  background-color: #28a74563;
-  border-radius: 20px;
+  background-color: #1db954;
+  border-radius: 10px;
 }
 
 .container > .col-sm {
@@ -53,18 +61,20 @@ body {
 }
 
 .home-main button {
+  color: #ffffff;
   font-weight: bolder;
   font-size: 1.2em;
   padding: 0px 40px;
   border-radius: 0rem;
   height: 54px;
-  background-color: #acffc4;
-  border-color: #acffc4;
+  background-color: #191414;
+  border-color: #191414;
 }
 
 .home-main button:hover {
-  background-color: #2aeb60;
-  border-color: #2aeb60;
+  color: #ffffff;
+  background-color: #56e280;
+  border-color: #56e280;
 }
 
 [type='search']:focus {
@@ -74,7 +84,7 @@ body {
 }
 
 input:focus {
-  background-color: rgb(247, 246, 206);
+  background-color: #e0ffe7;
   transition: ease-in-out, width 0.35s ease-in-out;
 }
 

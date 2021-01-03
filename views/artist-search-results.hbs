@@ -1,75 +1,20 @@
 
-<h1>artist-search-results</h1>
-
-<h3>This is the search result for {{searchQuery}}</h3>
-
-
-<!--<p>
-{{#each searchData}}
-    {{images.[0].url}}</p>
-<img src="{{images.[0].url}}" alt="">
-{{/each}}
--->
-<!--
-<section class="search-results">
-
-{{#each searchData}}
-
-<div class="single-result">
-
-<div class="single-result-poster">
-    <img src="{{images.[0].url}}" alt="">
-</div>
-
-<div class="single-result-info">
-<h2 style="padding-top: 10px; font-size: 25px; font-weight:800; color:red">{{name}}</h2>
-<span>{{external_urls.spotify}}</span>
-<br>
-<span>{{followers.total}}</span>
-<br>
-<span>{{href}}</span>
-<br>
-<span>{{id}}</span>
-<br>
-<span>{{name}}</span>
-<br>
-<span>{{popularity}}</span>
-<br>
-<span>{{type}}</span>
-<br>
-<span>{{uri}}</span>
-<br>
-<span>{{#genres}}
-<li>{{this}}</li>
-{{/genres}}
-</span>
-
-</div>
-
-</div>
-
-{{/each}}
-
-</section>
--->
-
-<div class="album py-5 bg-light">
+<div class="album py-5">
         <div class="container">
+
+<h3 style="margin-bottom: 2.5rem">This is the search result for <span  class="text-success" style="font-weight:700">{{searchQuery}} </span></h3>
 
           <div class="row">
 {{#each searchData}}
             <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
+              <div class="card mb-4 box-shadow bg-light">
                 {{#if images.[0].url}}
                 <a href="{{external_urls.spotify}}">
                 <img class="card-img-top" data-src="" alt="{{name}}" style="height: 225px; width: 100%; display: block;" src="{{images.[0].url}}" data-holder-rendered="true">
                 </a>
                 {{else}}
+                <img class="card-img-top" data-src="" alt="{{name}}" style="height: 225px; width: 100%; display: block;" src="https://via.placeholder.com/300x200.png?text={{name}}" data-holder-rendered="true">
                 
-                <img class="card-img" src="https://via.placeholder.com/300x150.png?text={{name}}" alt="Card image">
-                <div class="card-img-overlay">
-                  <p class="card-title"></p>
-                </div>
 
                 {{/if}}
                 <div class="card-body">
@@ -80,7 +25,7 @@
 
                   <h6 class="card-subtitle mb-2 text-muted">Genres</h6>
                     {{#genres}}
-                    <li class="list-group-item genre-list">{{this}}</li>
+                    <li class="list-group-item genre-list bg-light">{{this}}</li>
                     {{/genres}}
                  </ul>
                  {{/if}}
